@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Smart Accident Alert System</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #aaa;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d00000;
+            font-size: 24px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 96%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #d00000;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a00000;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>🚨 Smart Accident Alert</h1>
+
+        <h2>Login</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter Username"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+        >
+
+        <button onclick="login()">
+            Login
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+
+    <script>
+
+        function login() {
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+
+            // DEMO LOGIN DETAILS
+
+            if (username === "admin" && password === "1234") {
+
+                document.getElementById("message").innerHTML =
+                    "✅ Login Successful!";
+
+                document.getElementById("message").style.color =
+                    "green";
+
+                // Open main project page
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 1000);
+
+            } else {
+
+                document.getElementById("message").innerHTML =
+                    "❌ Invalid Username or Password";
+
+                document.getElementById("message").style.color =
+                    "red";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
